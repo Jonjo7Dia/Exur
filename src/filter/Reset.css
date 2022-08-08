@@ -1,0 +1,23 @@
+.reset {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border;
+    padding-left: .5rem;
+    margin-top: 2rem;
+}
+
+.resetButton {
+    width: 6rem;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #0041ff;;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sora';
+    font-weight: 300;
+    font-size: 1rem;
+}

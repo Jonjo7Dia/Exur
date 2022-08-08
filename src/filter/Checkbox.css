@@ -1,0 +1,53 @@
+.checkBoxes{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.checkBoxHeading{
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.checkBoxHeading img {
+    max-height: 70%;
+    max-width: 10%;
+    margin-left: 5px;
+}
+.checkBoxHeading p {
+    margin-left: 15px;
+    font-family: 'Sora';
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.filterOptions {
+
+    padding-left: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.checkbox {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkbox p{
+    margin-left: 15px;
+    font-family: 'Sora';
+    font-weight: 300;
+    font-size: 1rem;
+}
