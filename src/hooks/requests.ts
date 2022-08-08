@@ -19,5 +19,15 @@ async function httpGetData(page:number, searchText:string, complianceTypIds: num
     return fetchedData;
 }
 
-export {httpGetData};
+async function httpGetImage(id:number){
+    const url = `https://pfp-public-productdb-api.azurewebsites.net/api/picture/${id}`;
+    const response = await fetch(url, {
+        method: 'GET',
+
+    });
+    const image =  response;
+    return image
+}
+
+export {httpGetData, httpGetImage};
 

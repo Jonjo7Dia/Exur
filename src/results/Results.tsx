@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchReducer, FetchState } from "../store/fetchReducer";
+import {  FetchState } from "../store/fetchReducer";
 import { httpGetData } from "../hooks/requests";
 import "./Results.css";
 import { useEffect } from "react";
-
+import Result from './Result'
 function Results() {
   const dispatch = useDispatch();
   const searchItems:any = useSelector<FetchState>((state) => state);
@@ -24,14 +24,17 @@ function Results() {
             loading: false,
             results: data.results,
           } })
+          console.log(searchItems);
 
   } 
-  console.log(searchItems);
   useEffect(()=>{
       getData()
-  },[]);
+  },[dispatch]);
   return <div className={"results"}>
       {searchItems.loading && <p>Loading</p>}
+      {searchItems.results.map((result:any, index:number)=>{
+          return <Result key={index} result={result}/>
+      })}
   </div>;
 }
 

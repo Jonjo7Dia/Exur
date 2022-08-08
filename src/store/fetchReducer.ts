@@ -27,11 +27,12 @@ export const fetchReducer = (
 ) => {
   switch (action.type) {
     case "UPDATE_SEARCH": {
+        console.log(action.payload);
       return {
         ...state,
         complianceTypeIds: action.payload.complianceTypeIds,
         currentPage: action.payload.currentPage,
-        loading: false,
+        loading: action.payload.loading,
         pageSize: action.payload.pageSize,
         results: action.payload.results,
         searchText: "",
