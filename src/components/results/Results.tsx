@@ -4,6 +4,7 @@ import { httpGetData } from "../../hooks/requests";
 import "./Results.css";
 import { useEffect } from "react";
 import Result from './Result'
+import Loading from '../loading/Loading';
 function Results() {
   const dispatch = useDispatch();
   const searchItems:any = useSelector<FetchState>((state) => state);
@@ -31,7 +32,7 @@ function Results() {
       getData()
   },[dispatch]);
   return <div className={"results"}>
-      {searchItems.loading && <p>Loading</p>}
+      {searchItems.loading && <Loading/>}
       {searchItems.results.map((result:any, index:number)=>{
           return <Result key={index} result={result}/>
       })}
