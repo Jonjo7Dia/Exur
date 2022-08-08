@@ -10,8 +10,6 @@ useEffect(() =>{
     fetch(`https://pfp-public-productdb-api.azurewebsites.net/api/picture/${result.productPictures[0].pictureId}`)
         .then(response => response.blob())
         .then(image => {
-            // Create a local URL of that image
-            console.log(image)
             const localUrl = URL.createObjectURL(image);
             setImageData(localUrl);
         });

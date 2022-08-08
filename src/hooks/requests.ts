@@ -1,10 +1,14 @@
-async function httpGetData(page:number, searchText:string, complianceTypIds: number[]){
+
+
+
+async function HttpGetData(page:number, searchText:string, complianceTypeIds: number[]){
+
     const data={
         page: page,
         pageSize: 36,
         searchText: searchText, 
         productCategoryTypeIds: [],
-        complianceTypIds: complianceTypIds,
+        complianceTypeIds: complianceTypeIds,
         sourceTypeIds: []
     }; 
     const url = `https://pfp-public-productdb-api.azurewebsites.net/api/product/search/`;
@@ -29,5 +33,5 @@ async function httpGetImage(id:number){
     return image
 }
 
-export {httpGetData, httpGetImage};
+export {HttpGetData, httpGetImage};
 
