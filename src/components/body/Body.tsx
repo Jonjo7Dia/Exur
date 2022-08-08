@@ -1,5 +1,5 @@
 import './Body.css'
-import Filter from '../filter/Filter'
+import Filter from '../filter/Filter';
 import RightPanel from '../rightPanel/Rightpanel'
 function Body(){
     return <div className={'body'}>

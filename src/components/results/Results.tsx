@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import {  FetchState } from "../store/fetchReducer";
-import { httpGetData } from "../hooks/requests";
+import {  FetchState } from "../../store/fetchReducer";
+import { httpGetData } from "../../hooks/requests";
 import "./Results.css";
 import { useEffect } from "react";
 import Result from './Result'

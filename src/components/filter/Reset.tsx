@@ -1,6 +1,6 @@
 import './Reset.css';
 import { useDispatch, useSelector } from "react-redux";
-import {  FetchState } from "../store/fetchReducer";
+import {  FetchState } from "../../store/fetchReducer";
 function Reset(){
     const dispatch = useDispatch();
     const searchItems:any = useSelector<FetchState>((state) => state);

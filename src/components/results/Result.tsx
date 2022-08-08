@@ -1,5 +1,4 @@
 import "./Result.css";
-import { httpGetImage } from "../hooks/requests";
 import { useEffect, useState } from "react";
 interface Props {
   result: any;
