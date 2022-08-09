@@ -5,11 +5,13 @@ import { FetchState } from "../../store/fetchReducer";
 import { HttpGetData } from "../../hooks/requests";
 
 function Checkbox() {
-  const [checkBox1, setCheckBox1] = useState(false);
-  const [checkBox2, setCheckBox2] = useState(false);
-  let array: number[] = [];
   const dispatch = useDispatch();
   const searchItems: any = useSelector<FetchState>((state) => state);
+  const [checkBox1, setCheckBox1] = useState(false);
+  const [checkBox2, setCheckBox2] = useState(
+    searchItems.complianceTypeIds.includes(1)
+  );
+  let array: number[] = [];
   async function getData() {
     dispatch({
       type: "UPDATE_SEARCH",
@@ -64,6 +66,7 @@ function Checkbox() {
             onChange={(e) => {
               setCheckBox1(e.target.checked);
             }}
+            defaultChecked={searchItems.complianceTypeIds.includes(2)}
           />
           <p>Farlige produkter</p>
         </div>
@@ -73,6 +76,7 @@ function Checkbox() {
             onChange={(e) => {
               setCheckBox2(e.target.checked);
             }}
+            checked={checkBox2}
           />
           <p>Mangelfulde produkter</p>
         </div>

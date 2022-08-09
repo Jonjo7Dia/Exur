@@ -1,0 +1,39 @@
+.pagButton{
+    width: 30rem;
+    height: 5rem;
+    border: solid white 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pageButton{
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: #efefef;
+    color:  #4773f8; 
+    font-family: 'sora' sans-serif;
+    font-size: 1rem;
+}
+.pageButton:hover{
+    color:  #0041ff; 
+
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.active {
+    color:  #0041ff; 
+    font-size: 1.2rem;
+    font-weight: 800;
+
+}
+
+
+@media only screen and (max-width: 800px){
+    .pagButton{
+        width: 100%;
+    }
+}

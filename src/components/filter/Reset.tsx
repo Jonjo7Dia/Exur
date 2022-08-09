@@ -14,8 +14,10 @@ function Reset(){
             complianceTypeIds: [],
             loading: true,
             results: [],
-          }})
-          console.log(searchItems);
+          }});
+        
+
+
     }
     return <div className={'reset'}>
         <button className={'resetButton'} onClick={resetHandler}>

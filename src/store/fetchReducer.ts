@@ -27,7 +27,6 @@ export const fetchReducer = (
 ) => {
   switch (action.type) {
     case "UPDATE_SEARCH": {
-        console.log(action.payload);
       return {
         ...state,
         complianceTypeIds: action.payload.complianceTypeIds,

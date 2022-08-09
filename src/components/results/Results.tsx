@@ -28,7 +28,7 @@ function Results() {
   } 
   useEffect(()=>{
       getData()
-  },[dispatch]);
+  }, []);
   return <div className={"results"}>
       {searchItems.loading && <Loading/>}
       {searchItems.results.map((result:any, index:number)=>{

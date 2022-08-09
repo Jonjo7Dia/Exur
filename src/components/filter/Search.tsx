@@ -45,7 +45,7 @@ function Search() {
       >
         <div className={"searchElements"}>
           <button className={"searchButton"} onClick={getData}>
-            <FontAwesomeIcon icon={faSearch} className={"drinkIcon"} />
+            <FontAwesomeIcon icon={faSearch} className={"searchIcon"} />
           </button>
           <input
             className={"searchBar"}
