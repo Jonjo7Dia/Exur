@@ -11,7 +11,9 @@ function Search() {
   const dispatch = useDispatch();
   const { setCurrentPage, setResults, setLoading, setSearchText } =
     bindActionCreators(actionCreators, dispatch);
-  const [searchWord, setSearchWord] = useState("");
+  const filter = useSelector((state: State) => state.fetch);
+
+  const [searchWord, setSearchWord] = useState(filter.searchText);
   function submitHandler(e: any) {
     e.preventDefault();
     setSearchText(searchWord);
@@ -19,9 +21,7 @@ function Search() {
     setResults([]);
     setLoading(true);
   }
-  function searchWordHandler(e: any) {
-    setSearchWord(e.target.value);
-  }
+
   return (
     <div className={"search"}>
       <form action="" onSubmit={submitHandler}>
@@ -32,8 +32,12 @@ function Search() {
           <input
             className={"searchBar"}
             type="text"
+            defaultValue={searchWord}
             placeholder={"Søg Produkter"}
-            onChange={searchWordHandler}
+            onChange={(e)=>{
+              setSearchWord(e.target.value)
+            }}
+            id = {'searchText'}
           />
         </div>
 

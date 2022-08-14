@@ -64,10 +64,11 @@ export const setLoading = (loading: boolean) => {
   };
 };
 
-export const reset = () => {
+export const setReset = (object: any) => {
   return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.RESET,
+      payload: object,
     });
   };
 };

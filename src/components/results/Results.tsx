@@ -25,7 +25,6 @@ function Results() {
       setTotalPage(fetchedData.pageCount);
     }
   }
-  console.log(results);
   useEffect(() => {
     getData();
   }, [filter]);

@@ -36,6 +36,7 @@ interface LoadingAction {
 
 interface ResetAction {
   type: ActionType.RESET;
+  payload: any;
 }
 
 export type Action =

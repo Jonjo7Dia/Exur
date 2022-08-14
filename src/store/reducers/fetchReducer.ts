@@ -5,7 +5,6 @@ const initialState = {
   currentPage: 1,
   searchText: "",
   complianceTypeIds: [],
-
 };
 
 const fetchReducer = (state: any = initialState, action: Action) => {
@@ -19,11 +18,12 @@ const fetchReducer = (state: any = initialState, action: Action) => {
     case ActionType.SEARCHTEXT:
       return { ...state, searchText: action.payload };
     case ActionType.RESET:
+        console.log('reduct', action.payload);
       return {
-        ...state,
-        currentPage: 1, 
-        searchText: '',
-        complianceTypeIds: [],
+          ...state,
+        currentPage: action.payload.currentPage,
+        searchText: action.payload.searchText,
+        complianceTypeIds: action.payload.complianceTypeIds,
       };
     default:
       return state;
