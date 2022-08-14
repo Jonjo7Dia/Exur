@@ -8,31 +8,23 @@ import { actionCreators, State } from "../../store";
 import { bindActionCreators } from "redux";
 import { useState } from "react";
 function Search() {
-
   const dispatch = useDispatch();
-  const { setCurrentPage, setResults, setLoading, setSearchText } = bindActionCreators(
-    actionCreators,
-    dispatch
-  );
-  const filter = useSelector((state: State) => state.fetch);
-  const results = useSelector((state: State) => state.results);
-   const [searchWord, setSearchWord] =useState('');
-  function submitHandler(e:any){
+  const { setCurrentPage, setResults, setLoading, setSearchText } =
+    bindActionCreators(actionCreators, dispatch);
+  const [searchWord, setSearchWord] = useState("");
+  function submitHandler(e: any) {
     e.preventDefault();
     setSearchText(searchWord);
     setCurrentPage(1);
     setResults([]);
     setLoading(true);
   }
-  function searchWordHandler(e:any){
-    setSearchWord(e.target.value)
+  function searchWordHandler(e: any) {
+    setSearchWord(e.target.value);
   }
   return (
     <div className={"search"}>
-      <form
-        action=""
-        onSubmit={submitHandler}
-      >
+      <form action="" onSubmit={submitHandler}>
         <div className={"searchElements"}>
           <button className={"searchButton"} onClick={submitHandler}>
             <FontAwesomeIcon icon={faSearch} className={"searchIcon"} />
