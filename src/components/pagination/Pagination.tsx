@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FetchState } from "../../store/fetchReducer";
+
 import PaginationButtons from './PaginationButtons';
 import "./Pagination.css";
 
@@ -9,12 +9,11 @@ function range(start: number, end: number) {
   return Array.from({ length }, (_, idx) => idx + start);
 }
 function Pagination() {
-  const dispatch = useDispatch();
-  const searchItems: any = useSelector<FetchState>((state) => state);
-  const totalCount = searchItems.totalCount;
+
+  const totalCount = 14;
   const pageSize = 1;
   const siblingCount = 1;
-  const currentPage  = searchItems.currentPage;
+  const currentPage  = 1;
   const paginationRange = useMemo(() => {
     const totalPageCount = Math.ceil(totalCount / pageSize);
     const totalPageNumbers = siblingCount + 5;
@@ -50,7 +49,7 @@ function Pagination() {
       let middleRange = range(leftSiblingIndex, rightSiblingIndex);
       return [firstPageIndex, "...", ...middleRange, "...", lastPageIndex];
     }
-  }, [searchItems.currentPage, searchItems.totalCount]);
+  }, [totalCount, currentPage]);
   return <div className={"pagination"}>
       <PaginationButtons range={paginationRange}/>
   </div>;
